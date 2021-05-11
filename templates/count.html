@@ -1,0 +1,16 @@
+<h1> There are {{ count }} words...!!!</h1>
+<a href = "{% url 'home' %}" > Start again </a>
+<h1 style="color: rgb(255, 196, 240);"> Your Text</h1>
+{{ fulltext }}
+
+<br>
+<br>
+<h2 style="color: rgb(255, 196, 240);"> Popular words used more than 5 time </h2>
+{% for word, cnt in input_dict %}
+
+<br>
+{% if cnt >= 5 %}
+{{ word }}  -  {{ cnt }}
+{% endif%}
+
+{% endfor %}
